@@ -13,7 +13,7 @@ function addStrip(stripTag) {
 		} else if(rnFileType >= 0.245 && rnFileType < 0.613) {
 			img = randInt(0, 183).toString() + ".png";
 		} else {
-			img = randInt(0, 192.)toString() + ".gif";
+			img = randInt(0, 192.).toString() + ".gif";
 		}
 
 		$(stripTag).append("<img class=\"title-img\" src=\"./images/title-img-" + img + "\" alt=\"\>current year \>using alt\">");
