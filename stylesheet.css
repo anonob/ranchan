@@ -1,4 +1,4 @@
-body {
+body, p{
 	margin: 0;
 }
 
@@ -27,6 +27,9 @@ body {
 	-webkit-animation-name: rainbow;
 	-webkit-animation-duration: 4s;
 	-webkit-animation-iteration-count: infinite;
+	-moz-animation-name: rainbow;
+	-moz-animation-duration: 4s;
+	-moz-animation-iteration-count: infinite;
 	animation-name: rainbow;
 	animation-duration: 4s;
 	animation-iteration-count: infinite;
@@ -48,6 +51,26 @@ body {
 	-webkit-box-shadow: inset 0px 0px 125px 25px rgba(0,0,0,0.75);
 	-moz-box-shadow: inset 0px 0px 125px 25px rgba(0,0,0,0.75);
 	box-shadow: inset 0px 0px 125px 25px rgba(0,0,0,0.75);
+}
+
+#footer {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	margin-top: 8px;
+}
+
+#footer p {
+	font-family: Helvetica, sans-serif;
+	font-size: 12px;
+	color: #ffffff;
+	position: relative;
+	float: right;
+	margin: 0px 8px 8px 0px;
+}
+
+#header {
+	display: none;
 }
 
 .marquee {

@@ -15,14 +15,17 @@ $(function () {
 		$.ajax({
 			type: "GET",
 			url: "http://a.4cdn.org/boards.json",
-			data: "",
-			success: function(feed) {
-				boardjson = "http://a.4cdn.org/" + feed.boards[randInt(0, feed.boards.length - 1)].board + "/catalog.json";
+			data: {format: "json"},
+			dataType: "jsonp",
+			success: function(data) {
+				console.log(data);
+				boardjson = "http://a.4cdn.org/" + data.boards[randInt(0, data.boards.length - 1)].board + "/catalog.json";
 			},
-			dataType: "jsonp"
+			error: function(data) {
+				console.log(data);
+				console.log("err");
+			}
 		});
-
-		console.log(boardjson);
 
 		$.ajax({
 			type: "GET",
