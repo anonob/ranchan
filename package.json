@@ -8,8 +8,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "body-parser": "1.15.1",
     "ejs": "2.4.1",
-    "express": "4.13.3"
+    "express": "4.13.3",
+    "request": "2.72.0"
   },
   "engines": {
     "node": "4.4.5"

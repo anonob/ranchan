@@ -11,10 +11,11 @@ body, p{
 	position: absolute;
 }
 
-.thumb {
+.thumb img {
 	position: absolute;
-	width: 250px;
-	height: auto;
+	max-width: 250px;
+	max-height: 250px;
+	z-index: 2;
 }
 
 #marquee-container {
@@ -81,7 +82,7 @@ body, p{
 .title-img {
 	width: 300px;
 	height: auto;
-	opacity: 0.4;
+	opacity: 0.3;
 }
 
 @-webkit-keyframes rainbow {
