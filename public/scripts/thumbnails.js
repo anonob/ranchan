@@ -12,7 +12,7 @@ function thumbnails() {
 		left = "",
 		removeId = "";
 
-	setInterval(genThumbs, 500);
+	setInterval(genThumbs, 300);
 
 	function genThumbs() {
 		var randChan = chans[randInt(0, chans.length - 1)];
@@ -22,7 +22,7 @@ function thumbnails() {
 		thread.chan.boards = randChan.boards;
 		thumbId++;
 
-		if(thumbQ.length > 6) {
+		if(thumbQ.length > 8) {
 			removeId = "#tid-" + thumbQ.shift().toString();
 			$(removeId).remove();
 		}
