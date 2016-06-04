@@ -31,7 +31,7 @@ function thumbnails() {
 	function getBoard() {
 		return $.ajax({
 			type: "POST",
-			url: "http://ranchan.moe/boards",
+			url: "http://ranchan.moe:8080/boards",
 			data: JSON.stringify(chan),
 			contentType: "application/json",
 			dataType: "json",
@@ -51,7 +51,7 @@ function thumbnails() {
 		
 		return $.ajax({
 			type: "POST",
-			url: "http://ranchan.moe/threads",
+			url: "http://ranchan.moe:8080/threads",
 			data: JSON.stringify(catalog),
 			contentType: "application/json",
 			dataType: "json",
