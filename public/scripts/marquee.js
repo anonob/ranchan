@@ -27,7 +27,7 @@ function delStrip(stripTag) {
 	curStripCount--;
 }
 
-$(function() {
+function genStrips() {
 	var stripTag = "",
 		stripCount = Math.ceil($(window).height() / 75),
 		speed = Math.floor($(window).width() * 8),
@@ -39,7 +39,6 @@ $(function() {
 		$marquee.append("<div class=\"marquee\" id=\"strip-" + i.toString() + "\"></div>");
 		addStrip(stripTag);
 	}
-	
 	$(".marquee").marquee({
 		duration: speed,
 		direction: "left",
@@ -49,7 +48,6 @@ $(function() {
 		gap: 0,
 		startVisible: true
 	});
-
 	/*$window.resize(function resize(){
     	console.log(curHeight.toString() + "/" + $window.height().toString() + "/" + curStripCount.toString());
         if ($window.height() <= curHeight - 100) {
@@ -63,4 +61,4 @@ $(function() {
         	curHeight = $window.height();
         }
     }).trigger("resize");*/
-});
+}

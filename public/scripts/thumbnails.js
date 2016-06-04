@@ -1,4 +1,4 @@
-$(function () {
+function thumbnails() {
 	var $container = $("#container"),
 		thumbId = 0,
 		thumbQ = [],
@@ -18,12 +18,20 @@ $(function () {
 
 	chan = chans[randInt(0, chans.length - 1)];
 
-	genThumb();
+	setInterval(genThumbs, 500);
+
+	function genThumbs() {
+		getBoard().then(getCatalog).then(getThread);
+		if(thumbQ.length > 6) {
+			removeId = "#id-" + thumbQ.shift().toString();
+			$(removeId).remove();
+		}
+	}
 
 	function getBoard() {
 		return $.ajax({
 			type: "POST",
-			url: "http://localhost:5000/thumb",
+			url: "http://localhost:5000/boards",
 			data: JSON.stringify(chan),
 			contentType: "application/json",
 			dataType: "json",
@@ -37,13 +45,13 @@ $(function () {
 	function getCatalog(boardData, textStatus, jqXHR) {
 		do {
 			board = boardData.boards[randInt(0, boardData.boards.length - 1)].board;
-		} while(board == "swf" || board == "adv")
+		} while(board == "f" || board == "adv")
 		
 		catalog = {"board":board, "threads":"http://a.4cdn.org/" + board + "/catalog.json"};
 		
 		return $.ajax({
 			type: "POST",
-			url: "http://localhost:5000/thumb",
+			url: "http://localhost:5000/threads",
 			data: JSON.stringify(catalog),
 			contentType: "application/json",
 			dataType: "json",
@@ -69,7 +77,7 @@ $(function () {
 			threadCount = 0;
 
 			thread = {"no":catalogData[pageNum].threads[threadNum].no.toString(), "tim":catalogData[pageNum].threads[threadNum].tim.toString(), "ext":catalogData[pageNum].threads[threadNum].ext};
-		} while(thread.ext == ".swf" || thread.ext == ".webm")
+		} while(thread.ext == ".swf" || thread.ext == ".webm" || thread.ext == ".pdf")
 		
 		
 		top = randInt(5, 75).toString() + "%";
@@ -84,13 +92,4 @@ $(function () {
 			thumbId = 0;
 		}
 	}
-
-	function genThumb() {
-		getBoard().then(getCatalog).then(getThread);
-		if(thumbQ.length > 5) {
-			removeId = "#id-" + thumbQ.shift().toString();
-			$(removeId).remove();
-		}
-		setTimeout(genThumb, 3000);
-	}
-});
+}

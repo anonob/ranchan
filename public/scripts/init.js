@@ -1,0 +1,6 @@
+$(function() {
+	
+	genStrips()
+
+	thumbnails();
+});

@@ -14,14 +14,14 @@ app.get('/', function(req, res) {
 	res.render('pages/index');
 });
 
-app.post('/thumb', function(req, res) {
-	if(req.body.boards != undefined) {
-		request(req.body.boards).pipe(res);
-		console.log("Board: " + req.body.boards);
-	} else if(req.body.threads != undefined) {
-		request(req.body.threads).pipe(res);
-		console.log("Thread: " + req.body.threads);
-	}
+app.post('/boards', function(req, res) {
+	request(req.body.boards).pipe(res);
+	console.log("Board: " + req.body.boards);
+});
+
+app.post('/threads', function(req, res) {
+	request(req.body.threads).pipe(res);
+	console.log("Thread: " + req.body.threads);
 });
 
 app.listen(app.get('port'), function() {
