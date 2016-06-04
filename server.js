@@ -20,9 +20,9 @@ app.post('/boards', function(req, res) {
 	console.log("Board: " + req.body.boards);
 });
 
-app.post('/threads', function(req, res) {
-	request(req.body.threads).pipe(res);
-	console.log("Thread: " + req.body.threads);
+app.post('/catalog', function(req, res) {
+	request(req.body.catalog).pipe(res);
+	console.log("Catalog: " + req.body.catalog);
 });
 
 app.listen(app.get('port'), function() {
