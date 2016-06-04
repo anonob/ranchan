@@ -1,5 +1,7 @@
 function thumbnails() {
 	var $container = $("#container"),
+		thumbId = 0,
+		thumbQ = [],
 		pageNum = 0,
 		pageCount = 0,
 		threadNum = 0,
@@ -54,10 +56,31 @@ function thumbnails() {
 			contentType: "application/json",
 			dataType: "json",
 			error: function(data) {
+				console.log("An error occured while obtaining a board");
 				console.log(data);
-				console.log("err");
 			}
-	});
+		});
+	}
+
+	function getCatalog(boardData, textStatus, jqXHR) {
+		do {
+			board = boardData.boards[randInt(0, boardData.boards.length - 1)].board;
+		} while(board == "f" || board == "adv")
+		
+		catalog = {"board":board, "threads":"http://a.4cdn.org/" + board + "/catalog.json"};
+		
+		return $.ajax({
+			type: "POST",
+			url: "http://localhost:5000/threads",
+			data: JSON.stringify(catalog),
+			contentType: "application/json",
+			dataType: "json",
+			error: function(data) {
+				console.log("An error occured while obtaining a thread");
+				console.log(data);
+			}
+		});
+	}
 
 	function getThread(catalogData, textStatus, jqXHR) {
 		do {
