@@ -4,7 +4,7 @@ function thumbnails() {
 		thumbQ = [],
 		chans = [{"site":"4chan", "boards":"http://a.4cdn.org/boards.json"}];
 
-	setInterval(genThumbs, 350);
+	setInterval(genThumbs, 400);
 
 	function genThumbs() {
 		var randomChan = chans[randInt(0, chans.length - 1)];
@@ -14,7 +14,7 @@ function thumbnails() {
 		thread.chan.boards = randomChan.boards;
 		thumbId++;
 
-		if(thumbQ.length > 9) {
+		while(thumbQ.length > 9) {
 			var removeId = "#tid-" + thumbQ.shift().toString();
 			$(removeId).remove();
 		}
