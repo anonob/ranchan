@@ -34,4 +34,4 @@ By default, the site's background consists of title banners scraped from 4chan i
 
 If you wanna suggest a new feature/improvement (besides telling me to go kill myself), just figure out how to get in touch with me or open a new [issue](https://github.com/anonob/ranchan/issues/new) or something
 
-# <img src="https://raw.githubusercontent.com/anonob/ranchan/master/public/images/title-img/title-img-0.gif" alt="ranchan"/>
+# <img src="https://raw.githubusercontent.com/anonob/ranchan/master/public/images/banners/0.gif" alt="ranchan"/>
