@@ -4,7 +4,7 @@ function thumbnails() {
 		thumbQ = [],
 		chans = [{"site":"4chan", "boards":"http://a.4cdn.org/boards.json"}];
 
-	setInterval(genThumbs, 400);
+	setInterval(genThumbs, 350);
 
 	function genThumbs() {
 		var randomChan = chans[randInt(0, chans.length - 1)];
@@ -14,7 +14,7 @@ function thumbnails() {
 		thread.chan.boards = randomChan.boards;
 		thumbId++;
 
-		while(thumbQ.length > 9) {
+		while(thumbQ.length > 10) {
 			var removeId = "#tid-" + thumbQ.shift().toString();
 			$(removeId).remove();
 		}
@@ -104,7 +104,7 @@ function thumbnails() {
 		left = randInt(5, 85).toString() + "%";
 		$container.append("<a class=\"thumb\" id=\"tid-" + thread.tid + "\" target=\"_blank\" href=\"http://boards.4chan.org/" 
 			+ thread.board.letter + "/thread/" + thread.op.no + "\"><img src=\"" + imgsrc + "\" style=\"top:" + top + ";left:" 
-			+ left + "\" alt=\"\>current year \>seeing alt-text\"></a>");
+			+ left + "\" alt=\"\>current year \>using alt-text\"></a>");
 
 		thumbQ.push(parseInt(thread.tid, 10));
 	}

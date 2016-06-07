@@ -8,15 +8,13 @@ function addStrip(stripTag) {
 	for(var i = 0; i < imageCount; i++) {
 		var rnFileType = Math.random();
 
-		if(rnFileType < 0.245) {
-			img = randInt(0, 121).toString() + ".jpg";
-		} else if(rnFileType >= 0.245 && rnFileType < 0.613) {
-			img = randInt(0, 183).toString() + ".png";
+		if(rnFileType < 0.62) {
+			img = randInt(0, 305).toString() + ".jpg";
 		} else {
-			img = randInt(0, 192.).toString() + ".gif";
+			img = randInt(0, 192).toString() + ".gif";
 		}
 
-		$(stripTag).append("<img class=\"title-img\" src=\"./images/title-img-" + img + "\" alt=\"\>current year \>using alt\">");
+		$(stripTag).append("<img class=\"banner-img\" src=\"/images/banners/" + img + "\" alt=\"\>current year \>using alt-text\">");
 	}
 
 	curStripCount++;
@@ -28,17 +26,18 @@ function delStrip(stripTag) {
 }
 
 function genStrips() {
-	var stripTag = "",
-		stripCount = Math.ceil($(window).height() / 75),
-		speed = Math.floor($(window).width() * 8),
-		$marquee = $("#marquee-container"),
-		$window = $(window);
+	var $window = $(window),
+		$marqueeContainer = $("#marquee-container"),
+		stripTag = "",
+		stripCount = Math.ceil($window.height() / 75),
+		speed = Math.floor($window.width() * 8);
 
 	for(var i = 0; i < stripCount; i++) {
 		stripTag = "#strip-" + i.toString();
-		$marquee.append("<div class=\"marquee\" id=\"strip-" + i.toString() + "\"></div>");
+		$marqueeContainer.append("<div class=\"marquee\" id=\"strip-" + i.toString() + "\"></div>");
 		addStrip(stripTag);
 	}
+
 	$(".marquee").marquee({
 		duration: speed,
 		direction: "left",
