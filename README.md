@@ -1,5 +1,6 @@
-# <img src="https://raw.githubusercontent.com/anonob/ranchan/master/public/images/icon/ranleaf-title-256.gif" alt="ranchan"/>
+# <img src="https://raw.githubusercontent.com/anonob/ranchan/master/public/images/icon/ranleaf-title-256.gif" alt="ranchan" style="height:256px"/>
 > Random thread discovery client for *chan boards
+
 ## About
 *random-chan*, or *ranchan* for short, sets out to aggregate threads from all across the internet into one page and serve them to users in a novel manner. By introducing a limited set of controls and preferences, users can fine tune their experience from a purely random search across all *chan sites, to one which matches the sites, interests, and interactions they choose. With the elimination of title and caption text, choosing to visit a thread becomes much more about what is visually appealing and consumable, with the actual topic of discussion acting as the reward for a user's curiosity.
 
