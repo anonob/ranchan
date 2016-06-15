@@ -1,4 +1,5 @@
 $(function() {
 	genStrips()
 	thumbnails();
+	quickNav();
 });

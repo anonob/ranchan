@@ -1,9 +1,12 @@
-<nav>
-	<ul class="nav nav-pills">
-		<li role="presentation"></li>
-		<li role="presentation"></li>
-		<li role="presentation"></li>
-		<li role="presentation"></li>
-		<li role="presentation"></li>
-	</ul>
+<nav class="navbar">
+	<div class="btn-group" role="group" aria-label="settings">
+	  <button type="button" class="btn btn-default" disabled="disabled">
+	  	<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+	  </button>
+	  <button type="button" class="btn btn-default" id="quick-nav-btn">
+	  	<span class="glyphicon glyphicon-chevron-right" id="quick-nav-icon" aria-hidden="true"></span>
+	  </button>
+	</div>
+	<% include ./content-filter.ejs %>
+	<% include ./site-source.ejs %>
 </nav>
