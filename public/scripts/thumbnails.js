@@ -2,10 +2,26 @@ function thumbnails() {
 	var $container = $("#container"),
 		thumbId = 0,
 		thumbQ = [],
-		chans = [{"site":"4chan", "boards":"http://a.4cdn.org/boards.json"}];
+		chans = [{"site":"4chan", "boards":"http://a.4cdn.org/boards.json"}],
+		invalidList = ["f", "adv"],
+		nsfwList = ["aco", "b", "d", "e", "gif", "h", "hc", "hm", "hr", "i", "ic", "pol", "r", "r9k", "s", "s4s", "soc", "t", "trash", "u", "wg", "y"];
+
+	
+
+
+$("#content-filter-sfw").on("click", function() {
+		if($(this).hasClass("active") == false) {
+			if($("#content-filter-both").hasClass("active") == true) {
+				$("#content-filter-both").removeClass("active");
+			} else {
+				$("#content-filter-nsfw").removeClass("active");
+			}
+			$("#content-filter-sfw").addClass("active");
+		}
+	});
+
 
 	setInterval(genThumbs, 350);
-
 	function genThumbs() {
 		var randomChan = chans[randInt(0, chans.length - 1)];
 		var thread = {"tid":"", "chan":{"site":"", "boards":""}, "board":{"letter":"", "catalog":""}, "op":{"no":"", "tim":"", "ext":""}};
@@ -45,9 +61,23 @@ function thumbnails() {
 	}
 
 	function getCatalog(thread, boardData) {
-		do {
-			thread.board.letter = boardData.boards[randInt(0, boardData.boards.length - 1)].board;
-		} while(thread.board.letter == "f" || thread.board.letter == "adv")
+		var blackList = [];
+		if($("#content-filter-sfw").hasClass("active")){
+			blackList = invalidList.concat(nsfwList);
+			do {
+				thread.board.letter = boardData.boards[randInt(0, boardData.boards.length - 1)].board;
+			} while(blackList.indexOf(thread.board.letter) != -1 )
+		} else if($("#content-filter-both").hasClass("active")) {
+			blackList = invalidList;
+			do {
+				thread.board.letter = boardData.boards[randInt(0, boardData.boards.length - 1)].board;
+			} while(blackList.indexOf(thread.board.letter) != -1 )
+		} else {
+			blackList = nsfwList;
+			do {
+				thread.board.letter = boardData.boards[randInt(0, boardData.boards.length - 1)].board;
+			} while(blackList.indexOf(thread.board.letter) == -1 )
+		}
 		
 		thread.board.catalog = "http://a.4cdn.org/" + thread.board.letter + "/catalog.json";
 		
@@ -100,7 +130,7 @@ function thumbnails() {
 			}
 		} while(thread.op.ext == ".swf" || thread.op.ext == ".webm" || thread.op.ext == ".pdf")
 
-		top = randInt(5, 70).toString() + "%";
+		top = randInt(8, 72).toString() + "%";
 		left = randInt(5, 85).toString() + "%";
 		$container.append("<a class=\"thumb\" id=\"tid-" + thread.tid + "\" target=\"_blank\" href=\"http://boards.4chan.org/" 
 			+ thread.board.letter + "/thread/" + thread.op.no + "\"><img src=\"" + imgsrc + "\" style=\"top:" + top + ";left:" 
