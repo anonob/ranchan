@@ -1,15 +1,17 @@
-# <img src="https://raw.githubusercontent.com/anonob/ranchan/master/public/images/icon/ranleaf-title-256.gif" alt="ranchan" style="height:256px"/>
-> Random thread discovery client for *chan boards
+<img src="https://raw.githubusercontent.com/anonob/ranchan/master/public/images/icon/ranleaf-title-256.gif" alt="ranchan" style="height:256px"/>
 
 ## About
+> Random thread discovery client for *chan boards
+
+###### PHASE: Alpha
+###### VERSION: 0.1.2
 *random-chan*, or *ranchan* for short, sets out to aggregate threads from all across the internet into one page and serve them to users in a novel manner. By introducing a limited set of controls and preferences, users can fine tune their experience from a purely random search across all *chan sites, to one which matches the sites, interests, and interactions they choose. With the elimination of title and caption text, choosing to visit a thread becomes much more about what is visually appealing and consumable, with the actual topic of discussion acting as the reward for a user's curiosity.
 
 By default, the site's background consists of title banners scraped from 4chan in a randomly generated marqueue covered with a colored filter, while the foreground hosts thumbnails that can be clicked to open their corresponding threads from various chan-based sites.
 
-###### PHASE: Alpha
-###### VERSION: 0.1.2
 ## Features/Improvements List
 *-Below is a list of possible features/improvements (in no particular order) to add to the site as it is currently still in alpha-*
+
 *-The site relies on technologies such as bootstrap as a means of speeding up production, and will be phased out during beta-*
 - Add support for chan boards besides 4chan (will require writing a manual web-scraping scripts as opposed to using ajax with 4chan's API)
 - Add support for archive boards
