@@ -1,12 +1,12 @@
 <nav class="navbar">
 	<div class="btn-group" role="group" aria-label="settings">
-	  <button type="button" class="btn btn-default" disabled="disabled">
-	  	<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-	  </button>
-	  <button type="button" class="btn btn-default" id="quick-nav-btn">
-	  	<span class="glyphicon glyphicon-chevron-right" id="quick-nav-icon" aria-hidden="true"></span>
-	  </button>
+		<button type="button" class="btn btn-default" id="fullnav-btn">
+			<i class="fa fa-cog fa-lg" id="fullnav-icon" aria-hidden="true"></i>
+		</button>
+		<button type="button" class="btn btn-default" id="quicknav-btn">
+			<i class="fa fa-chevron-right fa-lg" id="quicknav-icon" aria-hidden="true"></i>
+		</button>
 	</div>
-	<% include ./content-filter.ejs %>
-	<% include ./site-source.ejs %>
+	<% include ./quicknav.ejs %>
+	<% include ./fullnav.ejs %>
 </nav>

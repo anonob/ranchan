@@ -6,21 +6,6 @@ function thumbnails() {
 		invalidList = ["f", "adv"],
 		nsfwList = ["aco", "b", "d", "e", "gif", "h", "hc", "hm", "hr", "i", "ic", "pol", "r", "r9k", "s", "s4s", "soc", "t", "trash", "u", "wg", "y"];
 
-	
-
-
-$("#content-filter-sfw").on("click", function() {
-		if($(this).hasClass("active") == false) {
-			if($("#content-filter-both").hasClass("active") == true) {
-				$("#content-filter-both").removeClass("active");
-			} else {
-				$("#content-filter-nsfw").removeClass("active");
-			}
-			$("#content-filter-sfw").addClass("active");
-		}
-	});
-
-
 	setInterval(genThumbs, 350);
 	function genThumbs() {
 		var randomChan = chans[randInt(0, chans.length - 1)];
@@ -62,12 +47,12 @@ $("#content-filter-sfw").on("click", function() {
 
 	function getCatalog(thread, boardData) {
 		var blackList = [];
-		if($("#content-filter-sfw").hasClass("active")){
+		if($(".content-filter-sfw").hasClass("active")){
 			blackList = invalidList.concat(nsfwList);
 			do {
 				thread.board.letter = boardData.boards[randInt(0, boardData.boards.length - 1)].board;
 			} while(blackList.indexOf(thread.board.letter) != -1 )
-		} else if($("#content-filter-both").hasClass("active")) {
+		} else if($(".content-filter-both").hasClass("active")) {
 			blackList = invalidList;
 			do {
 				thread.board.letter = boardData.boards[randInt(0, boardData.boards.length - 1)].board;

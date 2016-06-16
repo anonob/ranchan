@@ -1,0 +1,73 @@
+<div class="modal fade" id="fullnav" tabindex="-1" role="dialog" aria-labelledby="fullnav-label">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="fullnav-label">
+					<img src="/images/icon/ranleaf-title-64.gif" alt="ranchan"/>
+				</h4>
+			</div>
+			<div class="modal-body">
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active">
+						<a href="#fullnav-general" aria-controls="fullnav-general" role="tab" data-toggle="tab">
+							<i class="fa fa-tasks fa-lg fa-fw" id="quicknav-icon" aria-hidden="true"></i>General
+						</a>
+					</li>
+					<li role="presentation">
+						<a href="#fullnav-sites-boards" aria-controls="fullnav-sites-boards" role="tab" data-toggle="tab">
+							<i class="fa fa-clone fa-lg fa-fw" id="quicknav-icon" aria-hidden="true"></i>Sites/Boards
+						</a>
+					</li>
+					<li role="presentation">
+						<a href="#fullnav-effects" aria-controls="fullnav-effects" role="tab" data-toggle="tab">
+							<i class="fa fa-magic fa-lg fa-fw" id="quicknav-icon" aria-hidden="true"></i>Effects
+						</a>
+					</li>
+					<li role="presentation">
+						<a href="#fullnav-profiles" aria-controls="fullnav-profiles" role="tab" data-toggle="tab">
+							<i class="fa fa-floppy-o fa-lg fa-fw" id="quicknav-icon" aria-hidden="true"></i>Profiles
+						</a>
+					</li>
+					<li role="presentation">
+						<a href="#fullnav-changelog" aria-controls="fullnav-changelog" role="tab" data-toggle="tab">
+							<i class="fa fa-pencil-square-o fa-lg fa-fw" id="quicknav-icon" aria-hidden="true"></i>Changelog
+						</a>
+					</li>
+					<li role="presentation">
+						<a href="#fullnav-about" aria-controls="fullnav-about" role="tab" data-toggle="tab">
+							<i class="fa fa-question-circle-o fa-lg fa-fw" id="quicknav-icon" aria-hidden="true"></i>About
+						</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="fullnav-general">
+						<h4>Content Filter</h4>
+						<% include ./content-filter.ejs %>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="fullnav-sites-boards">
+						<h4>Coming Soon</h4>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="fullnav-effects">
+						<h4>Coming Soon</h4>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="fullnav-profiles">
+						<h4>Coming Soon</h4>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="fullnav-changelog">
+						<h4>Coming Soon</h4>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="fullnav-about">
+						<h4>What Is <b>ranchan</b>?</h4>
+						<p><i>random-chan</i>, or <i>ranchan</i> for short, sets out to aggregate threads from all across the internet into one page and serve them to users in an entertaining manner. By introducing a limited set of controls and preferences, users can fine tune their experience from a purely random search across all *chan sites, to one which matches the sites, interests, and interactions they choose. With the elimination of title and caption text, deciding to visit a thread becomes much more about what is visually appealing and consumable, with the actual content of a thread serving as the reward for a user's curiosity.</p>
+						<h4>View The Source On GitHub</h4>
+						<% include ./site-source.ejs %>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>

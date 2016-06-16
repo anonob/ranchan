@@ -17,7 +17,7 @@ header {
 	top: 0;
 	margin-bottom: 8px;
 	opacity: 0.25;
-	transition: opacity 0.3s;
+	transition: opacity 0.25s;
 }
 
 header:hover {
@@ -40,7 +40,16 @@ footer p {
 	margin: 0px 8px 8px 0px;
 }
 
-.site-source {
+#quicknav {
+	display: inline-block;
+	position: relative;
+}
+
+.modal-lg {
+	margin-top: 80px;
+}
+
+#quicknav .site-source {
 	display: inline-block;
 	position: relative;
 	left: -400px;
@@ -48,7 +57,7 @@ footer p {
 	transform: translateX(-246px);
 }
 
-.content-filter {
+#quicknav .content-filter {
 	display: inline-block;
 	position: relative;
 	left: -400px;
@@ -57,27 +66,35 @@ footer p {
 }
 
 .slide-out {
-	transition: left 0s 0s, opacity 1s 0.1s, transform 1s 0.1s;
+	transition: left 0s 0s, opacity 0.75s 0s, transform 0.75s 0s;
 }
 
 .slide-in {
-	transition: left 0s 1.1s, opacity 1s 0s, transform 1s 0s;
+	transition: left 0s 0.75s, opacity 0.75s 0s, transform 0.75s 0s;
 }
 
-#content-filter-sfw.active, #content-filter-both.active, #content-filter-nsfw.active {
-	color: #fff;
+.content-filter-sfw, .content-filter-both, .content-filter-nsfw {
+	font-weight: bold;
 }
 
-#content-filter-sfw.active {
-	background-color: rgba(104, 213, 88, 1);
+.content-filter-sfw.active, .content-filter-both.active, .content-filter-nsfw.active {
+	color: #fff !important;
 }
 
-#content-filter-both.active {
-	background-color: rgba(88, 167, 213, 1);
+.content-filter-sfw.active {
+	background-color: rgba(104, 213, 88, 1) !important;
 }
 
-#content-filter-nsfw.active {
-	background-color: rgba(213, 88, 88, 1);
+.content-filter-both.active {
+	background-color: rgba(88, 167, 213, 1) !important;
+}
+
+.content-filter-nsfw.active {
+	background-color: rgba(213, 88, 88, 1) !important;
+}
+
+#bg-music {
+	display: none;
 }
 
 #shadow-overlay {
@@ -143,7 +160,7 @@ footer p {
 .banner-img {
 	width: 300px;
 	height: auto;
-	opacity: 0.20;
+	opacity: 0.25;
 }
 
 @-webkit-keyframes rainbow {
@@ -194,6 +211,7 @@ footer p {
 	margin: 8px;
 	border: 0px;
 	min-height: 0px;
+	position: absolute;
 }
 
 .btn-default:active, .btn-default:hover, .btn-default:focus {
