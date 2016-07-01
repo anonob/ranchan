@@ -4,14 +4,16 @@
   "description": "Random thread discovery client for *chan boards",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build-css": "./bin/build-css"
   },
   "dependencies": {
     "body-parser": "1.15.1",
     "cors": "2.7.1",
     "ejs": "2.4.1",
     "express": "4.13.3",
-    "http-proxy": "1.13.3",
+    "node-sass": "3.7.0",
+    "node-sass-middleware": "0.9.8",
     "request": "2.72.0"
   },
   "engines": {

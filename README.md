@@ -1,15 +1,13 @@
-<a href="http://ranchan.moe">
+<a target="_blank" href="http://ranchan.moe">
     <img src="https://raw.githubusercontent.com/anonob/ranchan/master/public/images/icon/ranleaf-title-256.gif" alt="ranchan" style="height:256px"/>
 </a>
 
 ## About
 > Random thread discovery client for *chan boards
 
-###### PHASE: Alpha
-###### VERSION: 0.1.2
-*random-chan*, or *ranchan* for short, sets out to aggregate threads from all across the internet into one page and serve them to users in an entertaining manner. By introducing a limited set of controls and preferences, users can fine tune their experience from a purely random search across all *chan sites, to one which matches the sites, interests, and interactions they choose. With the elimination of title and caption text, deciding to visit a thread becomes much more about what is visually appealing and consumable, with the actual content of a thread serving as the reward for a user's curiosity.
-
-By default, the site's background consists of title banners scraped from 4chan in a randomly generated marqueue covered with a colored filter, while the foreground hosts thumbnails that can be clicked to open their corresponding threads from various chan-based sites.
+###### PHASE: alpha
+###### VERSION: 0.1.3
+*random-chan*, or *ranchan* for short, is a simple web client which sets out to aggregate threads from <a target="_blank" href="https://en.wikipedia.org/wiki/Imageboard">imageboard websites</a> (such as <a target="_blank" href="https://en.wikipedia.org/wiki/4chan">4chan</a>) into a single page, serving them to users in a random and entertaining manner. Images, which correspond to threads, pop up on the page for a limited time; clicking on an image will open its thread in a new tab. By introducing a limited set of controls and preferences, users can fine tune their experience from a purely random search across all *chan sites, to one which more closely matches the sites, interests, and interactions they choose. With the elimination of title and caption text, deciding to visit a thread becomes much more about what is visually appealing and consumable, with the actual content of a thread serving as the reward for a user's curiosity.
 
 ## Features/Improvements List
 *-Below is a list of possible features/improvements (in no particular order) to add to the site as it is currently still in alpha-*

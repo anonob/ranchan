@@ -1,5 +1,11 @@
-<div class="btn-group content-filter" role="group" aria-label="content-filter">
-  <button type="button" class="btn btn-default content-filter-sfw">SFW</button>
-  <button type="button" class="btn btn-default content-filter-both active">BOTH</button>
-  <button type="button" class="btn btn-default content-filter-nsfw">NSFW</button>
+<div class="btn-group content-filter" data-toggle="buttons">
+	<label class="btn btn-default content-filter-sfw active">
+		<input type="radio" autocomplete="off">SFW
+	</label>
+	<label class="btn btn-default content-filter-all">
+		<input type="radio" autocomplete="off">ALL
+	</label>
+	<label class="btn btn-default content-filter-nsfw">
+		<input type="radio" autocomplete="off">NSFW
+	</label>
 </div>

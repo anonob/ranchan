@@ -1,5 +1,0 @@
-$(function() {
-	genStrips()
-	thumbnails();
-	settings();
-});
