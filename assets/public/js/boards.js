@@ -51,7 +51,7 @@ var boards = function() {
 	var getBoardData4chan = function() {
 		return $.ajax({
 			type: "POST",
-			url: "http://localhost:5000/boards",
+			url: "http://ranchan.moe/boards",
 			data: JSON.stringify(thread4chan),
 			contentType: "application/json",
 			dataType: "json",
