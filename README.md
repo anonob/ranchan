@@ -1,5 +1,5 @@
 <a target="_blank" href="http://ranchan.moe">
-    <img src="https://raw.githubusercontent.com/anonob/ranchan/master/public/images/icon/ranleaf-title-256.gif" alt="ranchan" style="height:256px"/>
+    <img src="https://raw.githubusercontent.com/anonob/ranchan/master/assets/public/images/icon/ranleaf-title-256.gif" alt="ranchan" style="height:256px"/>
 </a>
 
 ## About
